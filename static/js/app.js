@@ -1,0 +1,1 @@
+var app = angular.module("asdf", ['ngResource','ngRoute','ui.bootstrap','ngSanitize','ngCookies','ngStorage','ngStomp','nvd3','angular-elastic-builder','ui.select','datatables', 'chart.js','queryBuilder','toastr']);

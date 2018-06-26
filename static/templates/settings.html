@@ -1,0 +1,72 @@
+<div onload="getSettings()" ng-controller="settingsController">
+	<div class="row card-box">
+		<div class="col-md-12 text-center">
+			<h4 class="header-title">Logstash Settings</h4>
+		</div>
+	<!-- 	<div ng-repeat="alert in alertMessages"
+			class="alert  alert-dismissable " ng-class="'alert-' + (alert.type)"
+			style="width: 50%; margin-left: 25%">
+			<a class="close" data-dismiss="alert" aria-label="close">
+				&#10006;</a> {{alert.msg}}
+	</div> -->
+	
+
+        <form class="form-horizontal" role="form" ng-init="buttonname='save'" ng-submit="save()">
+            <div class="col-md-5 col-md-offset-4">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="Logstash Host">Logstash Host</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" required="required" ng-model="settings.logstashHostname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="Protocol">Protocol</label>
+                        <div class="col-sm-9">
+                                <select class="form-control" ng-model="settings.logstashProtocol"
+                                ng-change="changePortnumber()" required="required">
+                                <option>HTTP</option>
+                                <option>TCP</option>
+                                <option>Filebeat</option>
+                                <option>others</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="PortNumber">PortNumber</label>
+                        <div class="col-sm-9">
+                                <input type="text" class="form-control" required="required"
+                                ng-model="settings.logstashPortnumber">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="Token">Token</label>
+                        <div class="col-sm-9">
+                                <input type="text" class="form-control" required="required"
+                                ng-model="settings.logstashToken">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="FileBeat
+                        Folder">FileBeat
+                                Folder</label>
+                        <div class="col-sm-9">
+                                <input type="text" class="form-control" required="required"
+                                ng-model="settings.filebeatHomePath">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <label class="col-sm-3 control-label" for="FileBeat
+                            Folder">conf
+                            file </label>
+                            <div class="col-sm-9">
+                                    <input type="text" class="form-control" required="required"
+                                    ng-model="settings.filebeatConfigPath">
+                            </div>
+                        </div>
+                    <div class="col-sm-12 text-center">
+                        <button type="submit" class="btn  bg-info-800 text-white">Save Settings</button>
+                    </div>
+        </form>
+	</div>
+</div>
